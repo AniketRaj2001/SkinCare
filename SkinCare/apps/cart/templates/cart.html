@@ -22,7 +22,7 @@
                             <tr v-for="product in products">
                                 <td>
                                     <figure class="image is-48x48">
-                                        <img :src="product.thumbnail">
+                                        <img :src="[[ product.thumbnail ]]">
                                     </figure>
                                 </td>
                                 <td>
@@ -147,7 +147,6 @@
                 <div class="field">
                     <div class="control">
                         <button class="button is-primary" v-on:click="buy('stripe')">Pay with stripe</button>
-                        <button class="button is-primary" v-on:click="buy('razorpay')">Pay with razorpay</button>
                     
                         <div id="paypal-button-container" class="mt-4"></div>
                     </div>
@@ -384,7 +383,7 @@
                                 'key': '{{ pub_key_razorpay }}',
                                 'amount': amount,
                                 'currency': 'INR',
-                                'name': 'Saul Gadgets',
+                                'name': 'Aniket Singh',
                                 'description': 'A cool gadget store',
                                 'order_id': order_id,
                                 'handler': function(res) {
